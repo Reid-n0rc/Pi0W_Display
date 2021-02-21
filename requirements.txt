@@ -1,1 +1,2 @@
 -e git://github.com/waveshare/e-Paper.git#egg=e-Paper
+netifaces >= 0.10.9

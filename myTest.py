@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 import sys
@@ -13,6 +14,9 @@ import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
 
+from netifaces import AF_INET, AF_INET6, AF_LINK, AF_PACKET, AF_BRIDGE
+import netifaces as ni
+
 logging.basicConfig(level=logging.DEBUG)
 
 try:
@@ -25,8 +29,7 @@ try:
     logging.info("init and Clear")
     #epd.init(epd.FULL_UPDATE)
     epd.Clear(0xFF)
-    font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
-    font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
+    font24 = ImageFont.truetype('Piboto-Regular.ttf', 24)
     ip_img = Image.new('1', (epd.height, epd.width), 255)
     ip_draw = ImageDraw.Draw(ip_img)
     
@@ -34,8 +37,9 @@ try:
     epd.displayPartBaseImage(epd.getbuffer(ip_img))
 
     epd.init(epd.PART_UPDATE)
-
-    ip_draw.text((0,0), "192.168.86.117", font  = font15, fill = 0)
+    #addrs = netifaces.ifaddresses('wlan0')
+    ip_draw.text((0,0), ni.ifaddresses('wlan0')[AF_INET][0]['addr'], font = font24, fill = 0)
+    #ip_draw.text((0,0), "192.168.86.117", font  = font15, fill = 0)
     epd.displayPartial(epd.getbuffer(ip_img)) 
     #    draw.text((0,0), 'Hi!', font = font15, fill = 0)
     #    epd.display(epd.getbuffer(image))

@@ -12,7 +12,13 @@ This work is licensed under a
 # Pi0W_Display
 Display system info like ip address, cpu usage, memory, and battery level on 2.13V2 e-paper display
 
-Setup:
+##Setup
+Install Piboto fonts
+```markdown
+$ apt-get update
+$ sudo apt-get install fonts-piboto
+```
+
 Install the waveshare RaspberryPi python library
 
 ```markdown
