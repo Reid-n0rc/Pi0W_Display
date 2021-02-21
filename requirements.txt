@@ -1,0 +1,1 @@
+-e git://github.com/waveshare/e-Paper.git#egg=e-Paper
