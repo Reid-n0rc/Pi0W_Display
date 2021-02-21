@@ -1,5 +1,4 @@
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
-
+# License
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
 
@@ -12,7 +11,7 @@ This work is licensed under a
 # Pi0W_Display
 Display system info like ip address, cpu usage, memory, and battery level on 2.13V2 e-paper display
 
-##Setup
+## Setup
 Install Piboto fonts
 ```markdown
 $ apt-get update
